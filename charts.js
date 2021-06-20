@@ -126,12 +126,13 @@ function buildCharts(sample) {
     // 3. Use Plotly to plot the data with the layout.
     Plotly.newPlot("bubble", bubbleData, bubbleLayout);
 
-    // 4. Create the trace for the gauge chart.
+     // 4. Create the trace for the gauge chart.
     var gaugeTrace = [{
       value: frequency,
       bgcolor: "white",
       type: "indicator",
       mode: "gauge+number",
+      margin: { t: 0, b: 0 },
       gauge: {
         axis: { range: [null, 10] },
         bar: { color: "black" },
@@ -139,21 +140,22 @@ function buildCharts(sample) {
           { range: [0, 2], color: "red" },
           { range: [2, 4], color: "orange" },
           { range: [4, 6], color: "yellow" },
-          { range: [6, 8], color: "yellowgreen" },
+          { range: [6, 8], color: "lightgreen" },
           { range: [8, 10], color: "green" }
         ],
+
       }
     }];
+    var gaugeData = gaugeTrace;
+
+
     // 5. Create the layout for the gauge chart.
-    var gaugeLayout = { 
-      title: {text: "Belly Button Washing Frequency"},
-    
+    var gaugeLayout = {
+      title: "Belly Button Washing Frequency"
     };
 
     // 6. Use Plotly to plot the gauge data and layout.
-    Plotly.newPlot("gauge", gaugeTrace, gaugeLayout);
-
+    Plotly.newPlot("gauge", gaugeData, gaugeLayout);
   });
 }
-
 
