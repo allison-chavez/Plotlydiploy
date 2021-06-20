@@ -141,9 +141,7 @@ function buildCharts(sample) {
           { range: [2, 4], color: "orange" },
           { range: [4, 6], color: "yellow" },
           { range: [6, 8], color: "lightgreen" },
-          { range: [8, 10], color: "green" }
-        ],
-
+          { range: [8, 10], color: "green" }],
       }
     }];
     var gaugeData = gaugeTrace;
